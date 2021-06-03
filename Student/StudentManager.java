@@ -1,4 +1,5 @@
 package Bài;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
@@ -16,8 +17,8 @@ public class StudentManager {
 
 
     public void add() {
-        int id = (studentList.size() > 0) ? (studentList.size() + 1) : 1;
-        System.out.println("student id = " + id);
+        int id = inputId();
+
         String name = inputName();
         byte age = inputAge();
         String address = inputAddress();
@@ -66,6 +67,9 @@ public class StudentManager {
         }
     }
 
+    public void sortByID() {
+        Collections.sort(studentList, new SortByID());
+    }
 
     public void sortStudentByName() {
         Collections.sort(studentList, new SortStudentByName());
